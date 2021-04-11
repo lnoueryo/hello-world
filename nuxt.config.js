@@ -1,7 +1,9 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
+  router: {
+    base: '/hello-world-from-shibuya/'
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'hello-world-from-shibuya',
@@ -11,6 +13,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    base: {
+      href: 'router.base'
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -34,11 +39,13 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/proxy',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
+axios: {
+  baseUrl: 'https://lnoueryo98.sakura.ne.jp/blog/api'
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
